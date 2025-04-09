@@ -3,6 +3,13 @@ class Solution:
         occupied_position = [i for i, x in enumerate(flowerbed) if x == 1]
         cnt = 0
 
+        if not occupied_position:
+            c = (len(flowerbed) + 1) // 2
+            if c >= n:
+                return True
+            else:
+                return False
+
         last = -1
         term = occupied_position[0] - last - 1
         if term >= 2:

@@ -22,10 +22,9 @@ def calc_chicken_distance(houses, chickens):
     return distance
 
 distance = 1e9
-for i in range(1, M+1):
-    combi = combinations(chickens, i)
-    for comb in combi:
-        dist = calc_chicken_distance(houses,comb)
-        distance = min(distance, dist)
+combi = combinations(chickens, M)
+for comb in combi:
+    dist = calc_chicken_distance(houses, comb)
+    distance = min(distance, dist)
         
 print(distance)

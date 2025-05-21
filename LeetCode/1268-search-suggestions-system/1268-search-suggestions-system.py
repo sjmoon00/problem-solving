@@ -1,6 +1,7 @@
 from collections import defaultdict
 class Solution:
     def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
+        products.sort()
         dic = defaultdict(list)
         for product in products:
             x = ''
@@ -12,6 +13,6 @@ class Solution:
         x = ''
         for c in searchWord:
             x += c
-            candid = list(sorted(dic[x]))
+            candid = list(dic[x])
             answer.append(candid[:3])
         return answer

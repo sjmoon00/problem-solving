@@ -1,3 +1,6 @@
 binary = input()
 
-print(int(binary, 2))
+answer = 0
+for b in binary:
+    answer = (answer << 1) + int(b)
+print(answer)

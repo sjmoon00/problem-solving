@@ -8,10 +8,13 @@ for _ in range(n):
 
 arr = [0] * 2001
 idx = 1000
-dic = {'R': 1, 'L': -1}
 for num, d in zip(x, dir):
     for _ in range(num):
-        arr[idx] += 1
-        idx += dic[d]
+        if d == 'R':
+            arr[idx] += 1
+            idx += 1
+        else:
+            idx -= 1
+            arr[idx] += 1
 
-print(len([x for x in arr if x > 1]))
+print(sum(1 for x in arr if x > 1))

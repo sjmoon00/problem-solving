@@ -21,4 +21,7 @@ for i in range(2001):
             min_x, max_x = min(min_x, i), max(max_x, i)
             min_y, max_y = min(min_y, j), max(max_y, j)
 
-print((max_x - min_x + 1) * (max_y - min_y + 1))
+if min_x == 9999:
+    print(0)
+else:
+    print((max_x - min_x + 1) * (max_y - min_y + 1))

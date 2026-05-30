@@ -7,4 +7,5 @@ for i in range(n):
     if i == 0 or arr[i] != arr[i-1]:
         answer = max(answer, i - idx)
         idx = i
+answer = max(answer, (n - 1) - idx + 1)
 print(answer)

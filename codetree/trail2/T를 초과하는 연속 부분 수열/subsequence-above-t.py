@@ -1,9 +1,8 @@
 n, t = map(int, input().split())
 arr = list(map(int, input().split()))
 
-cnt = 1 if arr[0] > t else 0
-answer = cnt
-for i in range(1, n):
+cnt, answer = 0, 0
+for i in range(n):
     if arr[i] > t:
         cnt += 1
         answer = max(answer, cnt)

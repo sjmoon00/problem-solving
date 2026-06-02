@@ -7,3 +7,5 @@ for s in student:
     if arr[s] >= K:
         print(s)
         break
+else:
+    print(-1)

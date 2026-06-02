@@ -39,7 +39,7 @@ diff = abs(len(A) - len(B))
 if len(A) < len(B):
     A.extend([A[-1]] * diff)
 else:
-    B.extend([B[-1] * diff])
+    B.extend([B[-1]] * diff)
 
 prev_a, prev_b, answer = 0, 0, 0
 for i in range(1, len(A)):

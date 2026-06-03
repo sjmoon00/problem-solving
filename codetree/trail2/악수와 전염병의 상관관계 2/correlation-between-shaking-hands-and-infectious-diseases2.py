@@ -8,10 +8,11 @@ infected[P] = 1
 handshakes.sort(key = lambda x : x[0])
 
 for t, x, y in handshakes:
-    if infected[x] and left_infection_count[x]:
+    x_infected, y_infected = infected[x], infected[y]
+    if x_infected and left_infection_count[x]:
         infected[y] = 1
         left_infection_count[x] -= 1
-    if infected[y] and left_infection_count[y]:
+    if y_infected and left_infection_count[y]:
         infected[x] = 1
         left_infection_count[y] -= 1
         

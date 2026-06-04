@@ -2,12 +2,9 @@ n = int(input())
 grid = [list(map(int, input().split())) for _ in range(n)]
 
 dxy = [(0, 1), (0, -1), (1, 0), (-1, 0)]
-answer = 1
+answer = 0
 for i in range(n):
     for j in range(n):
-        if grid[i][j]:
-            continue
-
         cnt = 0
         for dx, dy in dxy:
             nx, ny = i + dx, j + dy

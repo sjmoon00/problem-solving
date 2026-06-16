@@ -7,7 +7,7 @@ for i in range(n):
         sum1 = sum(arr[i][j:j + 3])
         for k in range(i, n):
             for l in range(n - 2):
-                if (i == k) and ((j <= l <= j + 2) or (j <= l + 2 <= j + 2)):
+                if (i == k) and abs(l - j) < 3:
                     continue
 
                 answer = max(answer, sum1 + sum(arr[k][l:l + 3]))

@@ -1,15 +1,15 @@
 board = [list(map(int, input().split())) for _ in range(19)]
 
 def main():
-    dxy = [(0, -1), (-1, -1), (-1, 0)]
+    dxy = [(0, 1), (1, 0), (1, 1), (1, -1)]
     for i in range(19):
         for j in range(19):
-            x, y = i, j
-            stone = board[x][y]
+            stone = board[i][j]
             if stone == 0:
                 continue
 
             for dx, dy in dxy:
+                x, y = i, j
                 cnt = 1
                 while board[x][y] == stone:
                     nx, ny = x + dx, y + dy

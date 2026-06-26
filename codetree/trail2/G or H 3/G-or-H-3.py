@@ -6,13 +6,13 @@ for _ in range(n):
     x.append(int(pos))
     c.append(char)
 
-N = max(x) + 1
+N = max(x) + 1 + k
 arr = [''] * N
 for i, char in zip(x, c):
     arr[i] = char
 
 answer = 0
-for i in range(1, N - k):
+for i in range(N - k):
     s = 0
     for ii in range(i, i + k + 1):
         char = arr[ii]

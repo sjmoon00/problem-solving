@@ -2,7 +2,7 @@ N, H, T = map(int, input().split())
 arr = list(map(int, input().split()))
 
 answer = 1e9
-for start in range(N - T):
+for start in range(N - T + 1):
     cnt = 0
     for i in range(start, start + T):
         h = arr[i]

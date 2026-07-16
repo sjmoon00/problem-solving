@@ -14,8 +14,10 @@ for p, c in zip(pos, candy):
 answer = 0
 for mid in range(101):
     start, end = mid-K, mid + (K+1)
-    if start < 0 or end > 100:
-        continue
+    if start < 0:
+        start = 0
+    if end > 100:
+        end = 100
     
     cnt = 0
     for i in range(start, end):

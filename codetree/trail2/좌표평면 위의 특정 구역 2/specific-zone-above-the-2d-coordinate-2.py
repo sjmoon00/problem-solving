@@ -1,13 +1,14 @@
-from itertools import combinations
 n = int(input())
 points = [tuple(map(int, input().split())) for _ in range(n)]
+x = [p[0] for p in points]
+y = [p[1] for p in points]
 
-answer = 1e11
-for candid_points in combinations(points, n - 1):
-    x_sort = sorted(candid_points, key=lambda x: x[0])
-    y_sort = sorted(candid_points, key=lambda x: x[1])
-    minX, maxX = x_sort[0][0], x_sort[-1][0]
-    minY, maxY = y_sort[0][1], y_sort[-1][1]
+answer = float('inf')
+for i in range(n):
+    x_candid = [x[ii] for ii in range(n) if ii != i]
+    y_candid = [y[ii] for ii in range(n) if ii != i]
+    minX, maxX = min(x_candid), max(x_candid)
+    minY, maxY = min(y_candid), max(y_candid)
 
     answer = min(answer, (maxX - minX) * (maxY - minY))
 

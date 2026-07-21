@@ -2,7 +2,7 @@ from itertools import combinations
 n = int(input())
 points = [tuple(map(int, input().split())) for _ in range(n)]
 
-answer = 1e9
+answer = 1e11
 for candid_points in combinations(points, n - 1):
     x_sort = sorted(candid_points, key=lambda x: x[0])
     y_sort = sorted(candid_points, key=lambda x: x[1])

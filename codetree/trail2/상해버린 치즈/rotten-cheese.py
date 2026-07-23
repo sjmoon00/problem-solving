@@ -19,10 +19,12 @@ for bad_cheese in range(1, M + 1):
             for histories in consume_history[:time]:
                 for h in histories:
                     consume.add(h)
+        
+        for sick_p in sick_persones:
             if (sick_p, bad_cheese) not in consume:
                 break
-            
-    bad_cheeses.append(bad_cheese)
+    else:
+        bad_cheeses.append(bad_cheese)
 
 d = defaultdict(int)
 for consumes in consume_history:

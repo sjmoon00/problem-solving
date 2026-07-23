@@ -13,6 +13,8 @@ for _ in range(S):
 
 bad_cheeses = [] 
 for bad_cheese in range(1, M + 1):
+    is_bad = True
+
     for time, sick_persones in enumerate(sick_history):
         consume = set()
         for sick_p in sick_persones:
@@ -22,14 +24,18 @@ for bad_cheese in range(1, M + 1):
         
         for sick_p in sick_persones:
             if (sick_p, bad_cheese) not in consume:
+                is_bad = False
                 break
-    else:
+
+        if not is_bad:
+            break    
+    if is_bad:
         bad_cheeses.append(bad_cheese)
 
-d = defaultdict(int)
+d = defaultdict(set)
 for consumes in consume_history:
     for person, cheese in consumes:
         if cheese in bad_cheeses:
-            d[cheese] += 1
+            d[cheese].add(person)
 
-print(max(d.values()))
+print(max([len(x) for x in d.values()]) if d.values() else 0)

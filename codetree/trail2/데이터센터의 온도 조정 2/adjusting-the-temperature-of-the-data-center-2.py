@@ -3,7 +3,7 @@ ranges = [tuple(map(int, input().split())) for _ in range(N)]
 
 low = min(x[0] for x in ranges)
 high = max(x[1] for x in ranges)
-answer = 0
+answer = max(0, C*N, H*N)
 for t in range(low, high + 1):
     output = 0
     for l, h in ranges:

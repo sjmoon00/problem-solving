@@ -18,5 +18,10 @@ for x_num in range(4):
                     passed[i] = True
             if sum(passed) == n:
                 answer = 1
+                break
+        if answer:
+            break
+    if answer:
+        break
 
 print(answer)

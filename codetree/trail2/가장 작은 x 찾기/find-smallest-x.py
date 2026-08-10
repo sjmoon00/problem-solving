@@ -5,7 +5,7 @@ a, b = list(a), list(b)
 
 minX, maxX = min(a), max(b)
 answer = 0
-for x in range(minX, maxX + 1):
+for x in range(maxX + 1):
     xx = x
     for aa, bb in zip(a, b):
         xx *= 2

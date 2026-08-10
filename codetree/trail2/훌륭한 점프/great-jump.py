@@ -2,6 +2,9 @@ n, k = map(int, input().split())
 arr = list(map(int, input().split()))
 
 def is_possible(max_val):
+    if arr[0] > max_val:
+        return False
+    
     avail_indices = []
     for i, x in enumerate(arr):
         if x <= max_val:
@@ -15,8 +18,8 @@ def is_possible(max_val):
     return True
 
 max_elem = max(arr)
-answer = 1e9
-for max_val in range(max_elem, -1, -1):
+answer = max_elem
+for max_val in range(max_elem, 0, -1):
     if is_possible(max_val):
         answer = max_val
     else:

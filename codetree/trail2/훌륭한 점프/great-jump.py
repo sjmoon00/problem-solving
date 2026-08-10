@@ -2,7 +2,7 @@ n, k = map(int, input().split())
 arr = list(map(int, input().split()))
 
 def is_possible(max_val):
-    if arr[0] > max_val:
+    if arr[0] > max_val or arr[-1] > max_val:
         return False
     
     avail_indices = []

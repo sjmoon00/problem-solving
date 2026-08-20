@@ -13,7 +13,8 @@ def main():
         for i in range(n-1):
             s = adjacent[i]
             a_i1 = s - arr[i]
-            if visited[a_i1]:
+
+            if not(1 <= a_i1 <= n) or visited[a_i1]:
                 break
             visited[a_i1] = True
             arr.append(a_i1)

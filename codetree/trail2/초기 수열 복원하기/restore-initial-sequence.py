@@ -3,7 +3,7 @@ adjacent = list(map(int, input().split())) if n >= 2 else []
 
 def main():
     if n == 1:
-        print(*adjacent)
+        print(1)
         return
     
     for a1 in range(1, n+1):
